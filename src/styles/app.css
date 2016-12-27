@@ -1,0 +1,220 @@
+@import 'variables';
+
+body, html {
+	background:$gray-lightest;
+	color:$gray-darker;
+	font-weight:300;
+	padding:0px;
+	margin:0;
+	font-size:12px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color: $gray-dark;
+}
+
+h3 {
+	font-size:12px;
+	font-weight:normal;
+	padding:0;
+	margin:0;
+}
+h5 {
+	font-size:10px;
+	padding:0;
+	margin:0;
+}
+
+
+#root {
+	max-width:740px;
+	margin-left:auto;
+	margin-right:auto;
+	font-family:$font-family-system;
+	background:#fff;
+	border:1px solid $gray-lighter;
+	box-shadow:0 2px 5px $gray-lighter;
+}
+
+
+div.message-container {
+	display:flex;
+	flex-direction:column;
+	overflow: hidden; 
+	padding:20px;
+
+	div.message {
+		display:flex;
+		flex-direction:row;
+		align-items:flex-end;
+		margin-bottom:5px;
+		position: relative;
+		animation: FadeInUp 0.3s ease-in;
+		div.message-avatar {
+			height:32px;
+			width:32px;
+			order:-1;
+			z-index:999;
+			margin-right:10px;
+			.circle {
+				height:32px;
+				width:32px;
+				border-radius: 32px;
+				background-image: url(../am.jpg);
+				background-repeat: no-repeat;
+				background-size:cover;
+			}
+		}
+		div.message-body {
+			padding:10px 15px;
+			border-radius:10px;
+			border-bottom-left-radius:2px;
+			background:#4E8B0C;
+			margin-bottom:10px;
+			color:#fff;
+			float:left;
+			align-self:flex-start;
+			position: relative;
+
+			&::after {
+				/*content: '';
+				position: absolute;
+				bottom:-10px;
+				left:-30px;
+				height:35px;
+				width:30px;
+				border-radius:19px;
+				background:rgba(#fff,1);*/
+
+			}
+			&::before {
+				/*content: '';
+				// width:10px;
+				// height:10px;
+				position: absolute;
+				bottom:-8px;
+				left:-5px;
+				border-right: 25px solid transparent;
+				border-left: 0px solid transparent;  
+				border-top: 15px solid $brand-blue;*/
+				
+			}
+		}
+		
+
+		&.guest {
+			padding-left:0;
+			padding-right:10px;
+			justify-content: flex-end;
+			div.message-avatar {
+				order:1;
+				margin:0 0 0 10px;
+				.circle {
+					background-image: url(https://cdn-us-ec.yottaa.net/567aabfd0b5344557f00083d/www.americanmeadows.com/v~13.d1.0.0/media/home_page/featured_products/daylilly-hemerocallis-moroccan-sunrise.jpg?yocs=G_&yoloc=us);
+				}
+			}
+			div.message-body {
+				order:-1;
+				border-bottom-left-radius:10px;
+				border-bottom-right-radius:2px;
+				background:#E6E0E0;
+				color:#524F26;
+				/*&::after {
+					content: '';
+					position: absolute;
+					bottom:-10px;
+					left:auto;
+					right:-30px;
+					height:35px;
+					width:30px;
+					border-radius:19px;
+					background:rgba(#fff,1);
+				}
+				&:before {
+					content: '';
+					position: absolute;
+					bottom:-8px;
+					right:-5px;
+					left:auto;
+					border-left: 25px solid transparent;
+					border-right: 0px solid transparent;  
+					border-top: 15px solid $gray-lighter;
+					
+				}*/
+			}
+		}
+	}
+}
+
+.btn {
+	border:1px solid $gray;
+	background:rgba($gray-lightest,0.3);
+	color:#fff;
+	padding:8px 12px;
+	border-radius:5px;
+
+	& + .btn {
+		margin-left:5px;
+	}
+}
+div.response-container {
+	display:flex;
+	justify-content:center;
+	padding:15px;
+	background:$gray-dark;
+	button.response {@extend .btn }
+}
+
+div.postListItem {
+	display:flex;
+	margin-bottom:15px;
+	align-items:center;
+	img.postThumbnail {
+		width:140px;
+		height:auto;
+		border-radius:5px;
+		margin-right:10px;
+		padding:0;
+		border:1px solid $gray-lighter;
+		box-shadow:0 0 5px $gray;
+	}
+	div.postContent {
+		display:flex;
+		flex-direction:column;
+	}
+}
+
+div.chatterbox {
+	height:100vh;
+	display:flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+
+
+/*@keyframes FadeInUp {
+  from { opacity:0; margin-top:40px; }
+  to { opacity:1; margin-top:0; }
+}*/
+
+.example-enter {
+  opacity: 0.01;
+  margin-top:40px;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: all 250ms ease-in;
+  margin-top:0px;
+}
+
+.example-leave {
+  opacity: 1;
+  margin-top:0;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: all 250ms ease-in;
+  margin-top:40px;
+}
