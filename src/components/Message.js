@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class Message extends Component {
 
 	render() {		
@@ -21,6 +20,9 @@ Message.propTypes = {
 	id: React.PropTypes.number.isRequired,
 	link: React.PropTypes.string,
 	user: React.PropTypes.string.isRequired,
-}
+	selectMessage: React.PropTypes.func.isRequired,
+	positiveMessage: React.PropTypes.func.isRequired,
+	negativeMessage: React.PropTypes.func.isRequired,
+};
 
 export default Message;
