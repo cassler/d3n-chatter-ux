@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 class Message extends Component {
 
-	render() {
+	render() {		
 		return (
 			<div className={`message ${this.props.user}`}>
 				<div className="message-avatar">

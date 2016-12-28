@@ -20,7 +20,7 @@ const RESPONSES = [
     img_src: "http://treehouse-code-samples.s3.amazonaws.com/bootstrap-4/img/nodestradamus.png",
     id: 2,
     user: 'host',
-    posReply: 'Tell me more! 🙌',
+    posReply: "Nah, I'm just browsing! 🙌",
     negReply: 'Do not care 👋',
   },
   {
@@ -29,8 +29,8 @@ const RESPONSES = [
     img_src: "http://treehouse-code-samples.s3.amazonaws.com/bootstrap-4/img/geo.png",
     id: 3,
     user: 'guest',
-    posReply: 'Is that so?',
-    negReply: 'No way.',
+    posReply: 'Anything else?',
+    negReply: 'Buzz off!',
   },
   {
     name: "Ecma Scriptnstuff",
@@ -38,12 +38,12 @@ const RESPONSES = [
     img_src: "http://treehouse-code-samples.s3.amazonaws.com/bootstrap-4/img/ecma.png",
     id: 4,
     user: 'host',
-    posReply: 'Jeff wins!',
-    negReply: 'You lose!',
+    posReply: 'Seeds for shade 😎',
+    negReply: 'Trees for sun! 🌞',
   },
   {
     name: "Jay Query",
-    content: "Great question, maybe something good for shade?",
+    content: "Maybe something good for shade?",
     img_src: "http://treehouse-code-samples.s3.amazonaws.com/bootstrap-4/img/jay.png",
     id: 5,
     user: 'guest',
@@ -56,8 +56,8 @@ const RESPONSES = [
     img_src: "http://treehouse-code-samples.s3.amazonaws.com/bootstrap-4/img/json.png",
     id: 6,
     user: 'host',
-    posReply: 'Sounds delightful 😍',
-    negReply: 'wtf',
+    posReply: 'More specific',
+    negReply: 'Sounds delightful 😍',
   },
   {
     name: "Json Babel",
@@ -110,27 +110,32 @@ var Stream = React.createClass({
 		}
 	},
 
+	
 	replyPositive: function() {
 		if ( this.state.index < this.props.initialMessages.length ) {
 			this.state.posReply = this.props.initialMessages[this.state.index].posReply;
 			this.state.negReply = this.props.initialMessages[this.state.index].negReply;
-			var count = this.state.index += 1;
-			this.setState(this.state);
+			this.state.index += 1;
+			this.setState(this.state, () => {
+				console.log(this.props)
+			});
+			
+			
 		} else {
 			this.state.complete = true
 		}
+
 		
 	},
 
 	replyNegative: function() {
 		if ( this.state.index > 1 ) {
-			var count = this.state.index -= 1;
+			this.state.index -= 1;
 			this.state.complete = false;
 			this.setState(this.state);
 			this.state.posReply = this.props.initialMessages[this.state.index - 1].posReply;
 			this.state.negReply = this.props.initialMessages[this.state.index - 1].negReply;
 			this.setState(this.state);
-
 		} 
 		
 		this.setState(this.state);
