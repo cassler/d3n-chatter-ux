@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
 
+
 class Message extends Component {
 
 	render() {		
+
 		return (
+			<div className='message-container'>
 			<div className={`message ${this.props.user}`}>
 				<div className="message-avatar">
 					<div className='circle'></div>
 				</div>
-				<div className="message-body">{this.props.content}</div>
+				<div className="message-body">
+					{this.props.content}
+				</div>
 			</div>
+			</div>
+			
 		);
 	}
 }

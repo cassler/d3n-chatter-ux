@@ -1,16 +1,14 @@
 import React, { Component, PropTypes } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group' // ES6
 
 // Redux Workers
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as MessageActionCreators from '../actions/messageActions';
 
-
+//Components
 import Message from './Message';
 import Respond from './Respond';
-
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group' // ES6
-
 
 class Stream extends Component {
 	
