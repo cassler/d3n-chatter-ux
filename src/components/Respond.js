@@ -5,6 +5,8 @@ export default class RespondButton extends Component {
 	static propTypes: {
 		negativeMessage: PropTypes.func.isRequired,
 		positiveMessage: PropTypes.func.isRequired,
+		negativeMessageText: PropTypes.string.isRequired,
+		positiveMessageText: PropTypes.string.isRequired,
 	};
 
 	state = {
@@ -26,10 +28,9 @@ export default class RespondButton extends Component {
 
 	render() {
 		return(
-			<div className="response-container">
-				
-				<button className="btn" onClick={this.positiveMessage}>Yes</button>
-				<button className="btn" onClick={this.negativeMessage}>No</button>
+			<div className="responses-inner">
+				<button className="btn" onClick={this.positiveMessage}>{this.props.positiveMessageText}</button>
+				<button className="btn" onClick={this.negativeMessage}>{this.props.negativeMessageText}</button>
 			</div>
 		);
 	}

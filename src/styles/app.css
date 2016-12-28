@@ -4,7 +4,7 @@ body, html {
 	background:$gray-lightest;
 	color:$gray-darker;
 	font-weight:300;
-	padding:0px;
+	padding:0;
 	margin:0;
 	font-size:12px;
 }
@@ -32,8 +32,6 @@ h5 {
 	margin-right:auto;
 	font-family:$font-family-system;
 	background:#fff;
-	border:1px solid $gray-lighter;
-	box-shadow:0 2px 5px $gray-lighter;
 }
 
 
@@ -158,11 +156,29 @@ div.message-container {
 	}
 }
 div.response-container {
-	display:flex;
-	justify-content:center;
-	padding:15px;
+	text-align:center;
+	padding:0;
+	position: relative;
+	height:100px;
+	width:100%;
 	background:$gray-dark;
-	button.response {@extend .btn }
+	button.response {
+		@extend .btn;
+		line-height:20px;
+	}
+}
+
+div.responses-inner {
+	width:100%;
+	height:100%;
+	top:0;
+	right:0;
+	left:0;
+	bottom:0;
+	position: absolute;
+	display:flex;
+	align-items:center;
+	justify-content:center;
 }
 
 div.postListItem {
@@ -217,4 +233,29 @@ div.chatterbox {
   opacity: 0.01;
   transition: all 250ms ease-in;
   margin-top:40px;
+}
+
+
+/* this is more stuff */
+
+.example2-enter {
+  opacity: 0.01;
+  top:300px;
+}
+
+.example2-enter.example2-enter-active {
+  opacity: 1;
+  transition: all 250ms ease-in;
+  top:0;
+}
+
+.example2-leave {
+  opacity: 1;
+  top:0;
+}
+
+.example2-leave.example2-leave-active {
+  opacity: 0.01;
+  transition: all 250ms ease-in;
+  top:-100px;
 }

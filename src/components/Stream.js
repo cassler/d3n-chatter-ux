@@ -24,7 +24,17 @@ class Stream extends Component {
 		const { dispatch, messages, currentMessageIndex } = this.props;
 		const negativeMessage = bindActionCreators(MessageActionCreators.negativeMessage, dispatch);
 		const positiveMessage = bindActionCreators(MessageActionCreators.positiveMessage, dispatch);
-		const selectMessage = bindActionCreators(MessageActionCreators.selectMessage, dispatch);		
+		const selectMessage = bindActionCreators(MessageActionCreators.selectMessage, dispatch);
+
+		const responseText = messages.map((response, index) => (
+			<Respond 
+				key={index}
+				positiveMessageText={response.posReply}
+				negativeMessageText={response.negReply}
+				positiveMessage={positiveMessage} 
+				negativeMessage={negativeMessage}
+			/>
+		)).slice(currentMessageIndex - 1, currentMessageIndex);	
 
 		const messageComponents = messages.map((message, index) => (
 			<Message 
@@ -49,7 +59,18 @@ class Stream extends Component {
 						{ messageComponents }
 					</ReactCSSTransitionGroup>
 				</div>
-				<Respond positiveMessage={positiveMessage} negativeMessage={negativeMessage}/>
+				
+				<div className="response-container">
+					<ReactCSSTransitionGroup
+						transitionName="example2"
+						transitionEnterTimeout={700}
+						transitionLeaveTimeout={300}>
+					{ responseText }
+					</ReactCSSTransitionGroup>
+					
+				</div>
+
+
 			</div>
 		);
 	}
