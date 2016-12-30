@@ -72,10 +72,48 @@ const initialState = {
 	    user: 'host',
 	    posReply: 'Found it 🙌 🙌 🙌',
 	    negReply: 'Nevermind',
+	  },
+	  {
+	    name: "Jay Query",
+	    content: "Maybe something good for shade?",
+	    img_src: "http://treehouse-code-samples.s3.amazonaws.com/bootstrap-4/img/jay.png",
+	    id: 8,
+	    user: 'guest',
+	    posReply: '😎 Mmmm, yes... shade...',
+	    negReply: 'Show me the light! ',
+	  },
+	  {
+	    name: "Json Babel",
+	    content: "Sure, our Partial Shade mixture contains 26 shade-tolerant wildflowers, both annuals and perennials, designed to bloom all season long, year after year. Just tap this message to see more.",
+	    img_src: "http://treehouse-code-samples.s3.amazonaws.com/bootstrap-4/img/json.png",
+	    id: 9,
+	    user: 'host',
+	    posReply: 'More specific',
+	    negReply: 'Sounds delightful 😍',
+	  },
+	  {
+	    name: "Json Babel",
+	    content: "I'm looking for a specific species",
+	    img_src: "http://treehouse-code-samples.s3.amazonaws.com/bootstrap-4/img/json.png",
+	    id: 10,
+	    user: 'guest',
+	    posReply: 'Which kind!? 🌷',
+	    negReply: 'Avocado! 🥑',
+	  },
+	  {
+	    name: "Json Babel",
+	    content: "Ok, species good for shade. How about these Forget Me Not Seeds? A classic.",
+	    img_src: "http://treehouse-code-samples.s3.amazonaws.com/bootstrap-4/img/json.png",
+	    id: 11,
+	    user: 'host',
+	    posReply: 'Found it 🙌 🙌 🙌',
+	    negReply: 'Nevermind',
 	  }
 	],
 	currentMessageIndex: 1,
 	currentMessageType: 'posReply',
+	selectedMessageIndex: -1,
+	selectedMessageType: 'default',
 }
 
 export default function Stream(state=initialState, action) {

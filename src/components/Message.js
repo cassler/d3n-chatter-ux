@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 
 
 class Message extends Component {
+	
+	componentDidUpdate(prevProps, prevState) {
+		console.log('I updated');	
+
+	};
 
 	render() {		
 
@@ -12,11 +17,10 @@ class Message extends Component {
 					<div className='circle'></div>
 				</div>
 				<div className="message-body">
-					{this.props.content}
+					<p>{this.props.content}</p>
 				</div>
 			</div>
 			</div>
-			
 		);
 	}
 }
@@ -26,6 +30,7 @@ Message.propTypes = {
 	content: React.PropTypes.string.isRequired,
 	id: React.PropTypes.number.isRequired,
 	link: React.PropTypes.string,
+	img_src: React.PropTypes.string,
 	user: React.PropTypes.string.isRequired,
 	selectMessage: React.PropTypes.func.isRequired,
 	positiveMessage: React.PropTypes.func.isRequired,

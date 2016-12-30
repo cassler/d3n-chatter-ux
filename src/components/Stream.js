@@ -41,6 +41,7 @@ class Stream extends Component {
 				key={index}
 				id={message.id}
 				user={message.user}
+				imageMessage={message.img_src}
 				selectMessage={selectMessage}
 				positiveMessage={positiveMessage}
 				negativeMessage={negativeMessage}
@@ -49,7 +50,8 @@ class Stream extends Component {
 
 		return (
 			<div className="chatterbox">
-				<div className="message-container">
+				<div className="message-container-outer">
+					<h5>Welcome to the show</h5>
 					<ReactCSSTransitionGroup
 						transitionName="example"
 						transitionEnterTimeout={500}
@@ -57,18 +59,9 @@ class Stream extends Component {
 						{ messageComponents }
 					</ReactCSSTransitionGroup>
 				</div>
-				
 				<div className="response-container">
-					<ReactCSSTransitionGroup
-						transitionName="example2"
-						transitionEnterTimeout={700}
-						transitionLeaveTimeout={300}>
 					{ responseText }
-					</ReactCSSTransitionGroup>
-					
 				</div>
-
-
 			</div>
 		);
 	}

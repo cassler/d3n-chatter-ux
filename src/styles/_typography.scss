@@ -1,0 +1,19 @@
+
+h1,h2,h3,h4,h5,h6 {
+	color: $gray-dark;
+}
+
+h3 {
+	font-size:12px;
+	font-weight:normal;
+	padding:0;
+	margin:0;
+}
+h5 {
+	font-size:10px;
+	padding:0;
+	margin:10px 0 0;
+	color:$gray;
+	text-align:center;
+	text-transform: uppercase;
+}

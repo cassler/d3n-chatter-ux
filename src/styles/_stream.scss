@@ -1,0 +1,150 @@
+div.chatterbox {
+	display:flex;
+	justify-content: space-between;
+	flex-direction: column;
+	width:300px;
+	height:500px;
+	background:#fff;
+	border:1px solid $gray-lighter;
+}
+
+
+
+div.message-container-outer {
+	display:flex;
+	flex-direction:column;
+	flex-grow:1;
+	justify-content:flex-end;
+	z-index:0;	
+}
+
+// Message
+
+div.message-container {
+	display:flex;
+	flex-direction:column;
+	flex-grow:1;
+	overflow: hidden; 
+	padding:5px 5px 0;
+	
+	&:first-child() {
+		margin-top:15px;
+	}
+
+
+	div.message {
+		display:flex;
+		flex-direction:row;
+		align-items:flex-end;
+		margin-bottom:5px;
+		position: relative;
+		animation: FadeInUp 0.3s ease-in;
+		div.message-avatar {
+			height:32px;
+			width:32px;
+			order:-1;
+			z-index:999;
+			margin-right:10px;
+			.circle {
+				height:32px;
+				width:32px;
+				border-radius: 32px;
+				background-image: url(../am.jpg);
+				background-repeat: no-repeat;
+				background-size:cover;
+			}
+		}
+		
+		div.message-body {
+			border-radius:10px;
+			max-width:75%;
+			border-bottom-left-radius:2px;
+			background:$brand-green-dark;
+			margin-bottom:10px;
+			color:#fff;
+			float:left;
+			align-self:flex-start;
+			position: relative;
+
+			img {
+				max-width:100%;
+				height:auto;
+				padding:0;
+				margin:0;
+				border-top-left-radius:10px;
+				border-top-right-radius: 10px;
+				border:1px solid $brand-green-dark;
+			}
+
+			p {
+
+				margin:10px 15px 10px;
+			}
+		}
+		
+
+		&.guest {
+			padding-left:0;
+			padding-right:10px;
+			justify-content: flex-end;
+			div.message-avatar {
+				order:1;
+				margin:0 0 0 10px;
+				.circle {
+					background-image: url(https://cdn-us-ec.yottaa.net/567aabfd0b5344557f00083d/www.americanmeadows.com/v~13.d1.0.0/media/home_page/featured_products/daylilly-hemerocallis-moroccan-sunrise.jpg?yocs=G_&yoloc=us);
+				}
+			}
+			div.message-body {
+				order:-1;
+				border-bottom-left-radius:10px;
+				border-bottom-right-radius:2px;
+				background:#E6E0E0;
+				color:#524F26;
+			}
+		}
+	}
+
+	div.message-timestamp {
+		font-size:10px;
+		color:$gray;
+		align-self:flex-end;
+		margin-top:-10px;
+		margin-right:15px;
+		opacity:0;
+		display:none;
+	}
+}
+
+
+
+// Responses
+// ------------------------------------
+	div.response-container {
+		text-align:center;
+		padding:0;
+		flex-shrink:0;
+		position: relative;
+		bottom:0;
+		left:0;
+		z-index:500;
+		height:80px;
+		width:100%;
+		background:$gray-dark;
+		button.response {
+			@extend .btn;
+			line-height:20px;
+		}
+	}
+
+	div.responses-inner {
+		width:100%;
+		height:100%;
+		top:0;
+		right:0;
+		left:0;
+		bottom:0;
+		position: absolute;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+	}

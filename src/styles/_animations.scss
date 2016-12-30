@@ -1,0 +1,48 @@
+.example-enter {
+  opacity: 0.01;
+  max-height:1;
+  overflow:hidden;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: all 250ms ease-in;
+  max-height:200px;
+  overflow:none;
+}
+
+.example-leave {
+  opacity: 1;
+  max-height:200px;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: all 250ms ease-in;
+  max-height:1;
+}
+
+
+/* this is more stuff */
+
+.example2-enter {
+  opacity: 0.01;
+  top:300px;
+}
+
+.example2-enter.example2-enter-active {
+  opacity: 1;
+  transition: all 250ms ease-in;
+  top:0;
+}
+
+.example2-leave {
+  opacity: 1;
+  top:0;
+}
+
+.example2-leave.example2-leave-active {
+  opacity: 0.01;
+  transition: all 250ms ease-in;
+  top:-100px;
+}
