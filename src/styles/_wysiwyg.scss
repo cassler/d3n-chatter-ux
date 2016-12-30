@@ -13,8 +13,13 @@
 		color:$gray;
 		font-size:0.9em;
 	}
-
+	&.chat-input .public-DraftEditor-content > div > div {
+		display:none;
+		&:last-child { display:block; }
+	}
 }
+
+
 
 // .md-RichEditor-root {
 // 	padding:15px !important;
@@ -119,7 +124,3 @@
 	}
 }
 
-.public-DraftEditor-content > div > div {
-	display:none;
-	&:last-child { display:block; }
-}

@@ -67,7 +67,7 @@ export default class MyEditor extends React.Component {
       <div className="draft-preview">
           {blocks}
         </div>
-      <div className='wysiwyg'>
+      <div className='wysiwyg chat-input'>
 
         <div className="draft-controls">
           <button onClick={() => {this._onBoldClick();}}>Bold</button>
