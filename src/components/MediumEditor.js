@@ -1,15 +1,11 @@
 import React from 'react';
-import { Editor, createEditorState, CustomImageSideButton } from 'medium-draft';
+import { Editor, createEditorState } from 'medium-draft';
 import 'medium-draft/lib/index.css';
+
 
 export default class MediumEditor extends React.Component {
   constructor(props) {
     super(props);
-
-    this.sideButtons = [{
-      title: 'Image',
-      component: CustomImageSideButton,
-    }];
 
     this.state = {
       editorState: createEditorState(), // for empty content
@@ -37,7 +33,6 @@ export default class MediumEditor extends React.Component {
         ref="editor"
         editorState={editorState}
         onChange={this.onChange} 
-        sideButtons={this.sideButtons}
       />
     );
   }

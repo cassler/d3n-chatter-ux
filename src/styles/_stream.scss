@@ -25,7 +25,7 @@ div.message-container {
 	display:flex;
 	flex-direction:column;
 	flex-grow:1;
-	overflow: hidden; 
+	// overflow: hidden; 
 	padding:5px 5px 0;
 	
 	&:first-child() {

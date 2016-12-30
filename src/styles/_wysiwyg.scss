@@ -1,5 +1,5 @@
 
-.md-RichEditor-editor,
+// .md-RichEditor-editor,
 .wysiwyg {
 	border:1px solid $gray;
 	font-family:Lato;
@@ -16,18 +16,18 @@
 
 }
 
-.md-RichEditor-root {
-	padding:15px !important;
-	.md-RichEditor-editor {
-		margin-left:0 !important;
-		margin-right:0;
-	}
-	.DraftEditor-root {
-		padding:15px 35px;
-		border-bottom:none !important;
-		border-top:none !important;
-	}
-}
+// .md-RichEditor-root {
+// 	padding:15px !important;
+// 	.md-RichEditor-editor {
+// 		margin-left:0 !important;
+// 		margin-right:0;
+// 	}
+// 	.DraftEditor-root {
+// 		padding:15px 35px;
+// 		border-bottom:none !important;
+// 		border-top:none !important;
+// 	}
+// }
 .draft-controls, .draft-submission {
 	padding:5px 15px;
 }
