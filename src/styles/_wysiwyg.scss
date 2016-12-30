@@ -1,0 +1,76 @@
+
+.md-RichEditor-editor,
+.wysiwyg {
+	border:1px solid $gray;
+	font-family:Lato;
+	padding:0;
+	margin:15px;
+	border-radius:5px;
+	box-shadow:0 0 20px $gray-lighter;
+	button {
+		background:none;
+		border:none;
+		color:$gray;
+		font-size:0.9em;
+	}
+
+}
+
+.md-RichEditor-root {
+	padding:15px !important;
+	.md-RichEditor-editor {
+		margin-left:0 !important;
+		margin-right:0;
+	}
+	.DraftEditor-root {
+		padding:15px 35px;
+		border-bottom:none !important;
+		border-top:none !important;
+	}
+}
+.draft-controls, .draft-submission {
+	padding:5px 15px;
+}
+
+.DraftEditor-root {
+	border-top:1px solid $gray-lighter;
+	border-bottom:1px solid $gray-lighter;
+}
+
+.public-DraftEditor-content {
+	padding:10px 15px;
+	z-index:900;
+}
+
+.public-DraftEditorPlaceholder-root {
+	height:0;
+	color:$gray;
+}
+
+.draft-submission {
+	padding:5px 15px;
+	background:$gray-lightest;
+	text-align: right;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+	button { 
+		color:$gray;
+		padding:5px 10px;
+	}
+	button.publish-draft {
+		background:$brand-blue-dark;
+		box-shadow: inset 0 0 10px $brand-blue;
+		color:#fff;
+		margin-left:5px;
+		border-radius:4px;
+		&:hover {
+			background:darken($brand-blue-dark,5%);
+		}
+		&:active {
+			opacity:0.6;
+		} 
+		&:focus {
+			outline-width: 0;
+		}
+	}
+}

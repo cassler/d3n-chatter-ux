@@ -2,15 +2,16 @@ div.chatterbox {
 	display:flex;
 	justify-content: space-between;
 	flex-direction: column;
-	width:300px;
-	height:500px;
+	width:100%;
+	padding:15px 100px;
 	background:#fff;
 	border:1px solid $gray-lighter;
 }
 
 
 
-div.message-container-outer {
+div.message-container-outer,
+div.preview-container {
 	display:flex;
 	flex-direction:column;
 	flex-grow:1;
@@ -83,7 +84,7 @@ div.message-container {
 		}
 		
 
-		&.guest {
+		&.guest, &.key-1, &.key-3, &.key-5, &.key-7, &.key-9, &.key-11  {
 			padding-left:0;
 			padding-right:10px;
 			justify-content: flex-end;
@@ -127,12 +128,24 @@ div.message-container {
 		bottom:0;
 		left:0;
 		z-index:500;
-		height:80px;
-		width:100%;
-		background:$gray-dark;
-		button.response {
-			@extend .btn;
-			line-height:20px;
+		height:40px;
+		padding:5px 15px;
+		border:1px solid $gray;
+		background:$gray-lightest;
+		margin:15px 15px;
+		border-radius:5px;
+		box-shadow:0 0 20px $gray-lighter;
+		button {
+			background:none;
+			border:none;
+			color:$gray;
+			font-size:0.9em;
+			&:active {
+				outline-width: 0;
+			}
+			& + button {
+				margin-left:20px;
+			}
 		}
 	}
 
