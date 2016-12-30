@@ -1,0 +1,126 @@
+
+// .md-RichEditor-editor,
+.wysiwyg {
+	border:1px solid $gray;
+	font-family:Lato;
+	padding:0;
+	margin:15px;
+	border-radius:5px;
+	box-shadow:0 0 20px $gray-lighter;
+	button {
+		background:none;
+		border:none;
+		color:$gray;
+		font-size:0.9em;
+	}
+	&.chat-input .public-DraftEditor-content > div > div {
+		display:none;
+		&:last-child { display:block; }
+	}
+}
+
+
+
+// .md-RichEditor-root {
+// 	padding:15px !important;
+// 	.md-RichEditor-editor {
+// 		margin-left:0 !important;
+// 		margin-right:0;
+// 	}
+// 	.DraftEditor-root {
+// 		padding:15px 35px;
+// 		border-bottom:none !important;
+// 		border-top:none !important;
+// 	}
+// }
+.draft-controls, .draft-submission {
+	padding:5px 15px;
+}
+
+.DraftEditor-root {
+	border-top:1px solid $gray-lighter;
+	border-bottom:1px solid $gray-lighter;
+}
+
+.public-DraftEditor-content {
+	padding:10px 15px;
+	z-index:900;
+}
+
+.public-DraftEditorPlaceholder-root {
+	height:0;
+	color:$gray;
+}
+
+.draft-submission {
+	padding:5px 15px;
+	background:$gray-lightest;
+	text-align: right;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+	button { 
+		color:$gray;
+		padding:5px 10px;
+	}
+	button.publish-draft {
+		background:$brand-blue-dark;
+		box-shadow: inset 0 0 10px $brand-blue;
+		color:#fff;
+		margin-left:5px;
+		border-radius:4px;
+		&:hover {
+			background:darken($brand-blue-dark,5%);
+		}
+		&:active {
+			opacity:0.6;
+		} 
+		&:focus {
+			outline-width: 0;
+		}
+	}
+}
+
+// Medium Editor
+
+.md-RichEditor-root {
+	font-family: $font-family-system;
+	padding:0;
+	margin:0;
+}
+
+.DraftEditor-root {
+	padding:20px 20px;
+	// font-size:16px;z
+	// line-height:1.6em;
+	font-weight:300;
+	color:$gray-dark;
+	figure.md-block-image {
+		div.md-block-image-inner-container {}
+		img {}
+		figcaption {color:$gray;}
+	}
+	.md-block.md-block-quote.md-RichEditor-blockquote {
+		background:lighten($brand-green, 25%);
+		font-family: $font-family-system;
+		font-size:1em;
+		color:darken($brand-green-dark,35%);
+		border-left-color:$brand-green;
+	}
+	h3.md-block {
+		font-weight: 800;
+		// font-size:26px;
+	}
+	ol.public-DraftStyleDefault-ol
+	ul.public-DraftStyleDefault-ul {
+		li.md-block {
+			padding:0;
+			margin-bottom:0;
+			margin-top:0;
+		}
+	}
+	a:link {
+		color:$brand-blue-dark;
+		text-decoration: none;
+	}
+}
+

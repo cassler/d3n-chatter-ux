@@ -9,6 +9,8 @@ import * as MessageActionCreators from '../actions/messageActions';
 //Components
 import Message from './Message';
 import Respond from './Respond';
+import MyEditor from './Editor';
+import MediumEditor from './MediumEditor';
 
 class Stream extends Component {
 	
@@ -50,8 +52,10 @@ class Stream extends Component {
 
 		return (
 			<div className="chatterbox">
+
 				<div className="message-container-outer">
 					<h5>Welcome to the show</h5>
+					<MediumEditor />
 					<ReactCSSTransitionGroup
 						transitionName="example"
 						transitionEnterTimeout={500}
@@ -59,6 +63,9 @@ class Stream extends Component {
 						{ messageComponents }
 					</ReactCSSTransitionGroup>
 				</div>
+
+				
+				<MyEditor className='wysiwyg' />
 				<div className="response-container">
 					{ responseText }
 				</div>

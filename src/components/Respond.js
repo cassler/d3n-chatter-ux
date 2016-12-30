@@ -29,8 +29,8 @@ export default class RespondButton extends Component {
 	render() {
 		return(
 			<div className="responses-inner">
-				<button className="btn" onClick={this.positiveMessage}>{this.props.positiveMessageText}</button>
-				<button className="btn" onClick={this.negativeMessage}>{this.props.negativeMessageText}</button>
+				<button onClick={this.positiveMessage}>{this.props.positiveMessageText}</button>
+				<button className="respond-yay" onClick={this.negativeMessage}>{this.props.negativeMessageText}</button>
 			</div>
 		);
 	}
