@@ -74,3 +74,52 @@
 		}
 	}
 }
+
+// Medium Editor
+
+.md-RichEditor-root {
+	font-family: $font-family-system;
+	padding:0;
+	margin:0;
+}
+
+.DraftEditor-root {
+	padding:20px 20px;
+	// font-size:16px;z
+	// line-height:1.6em;
+	font-weight:300;
+	color:$gray-dark;
+	figure.md-block-image {
+		div.md-block-image-inner-container {}
+		img {}
+		figcaption {color:$gray;}
+	}
+	.md-block.md-block-quote.md-RichEditor-blockquote {
+		background:lighten($brand-green, 25%);
+		font-family: $font-family-system;
+		font-size:1em;
+		color:darken($brand-green-dark,35%);
+		border-left-color:$brand-green;
+	}
+	h3.md-block {
+		font-weight: 800;
+		// font-size:26px;
+	}
+	ol.public-DraftStyleDefault-ol
+	ul.public-DraftStyleDefault-ul {
+		li.md-block {
+			padding:0;
+			margin-bottom:0;
+			margin-top:0;
+		}
+	}
+	a:link {
+		color:$brand-blue-dark;
+		text-decoration: none;
+	}
+}
+
+.public-DraftEditor-content > div > div {
+	display:none;
+	&:last-child { display:block; }
+}

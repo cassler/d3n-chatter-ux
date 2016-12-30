@@ -1,6 +1,7 @@
 import React from 'react';
 import {Editor, EditorState, RichUtils, convertToRaw } from 'draft-js';
 import Preview from './Preview';
+
 export default class MyEditor extends React.Component {
   constructor(props) {
     super(props);
@@ -32,7 +33,7 @@ export default class MyEditor extends React.Component {
   }
 
   _onSaveClick() {
-    console.log('clicked save');
+    this.state.publishState = this.state.editorState.getCurrentContent();
   }
 
   _onPublishClick() {
@@ -53,7 +54,7 @@ export default class MyEditor extends React.Component {
           index={index}
           key={index}
         />
-    ));
+    )).splice(0, rawOutput.blocks.length -1);
 
 
 
@@ -63,7 +64,7 @@ export default class MyEditor extends React.Component {
 
     return (
       <div>
-                <div className="draft-preview">
+      <div className="draft-preview">
           {blocks}
         </div>
       <div className='wysiwyg'>

@@ -3,9 +3,12 @@ div.chatterbox {
 	justify-content: space-between;
 	flex-direction: column;
 	width:100%;
-	padding:15px 100px;
-	background:#fff;
-	border:1px solid $gray-lighter;
+	max-width:740px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:15px;
+	// background:#fff;
+	// border:1px solid $gray-lighter;
 }
 
 

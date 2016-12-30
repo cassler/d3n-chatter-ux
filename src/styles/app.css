@@ -11,8 +11,6 @@ body, html {
 	background:$gray-lightest;
 	color:$gray-darker;
 	font-weight:300;
-	padding:0;
-	margin:0;
 	font-size:14px;
 }
 
@@ -21,6 +19,7 @@ body, html {
 	margin-left:auto;
 	margin-right:auto;
 	font-family:$font-family-system;
+	width:100%;
 }
 
 
