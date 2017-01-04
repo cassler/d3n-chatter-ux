@@ -3,16 +3,75 @@ div.chatterbox {
 	justify-content: space-between;
 	flex-direction: column;
 	width:100%;
-	max-width:740px;
 	margin-left:auto;
 	margin-right:auto;
-	padding:15px;
+	
 	// background:#fff;
 	// border:1px solid $gray-lighter;
 }
 
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.rotating {
+  -webkit-animation: rotating 50s linear infinite;
+  -moz-animation: rotating 50s linear infinite;
+  -ms-animation: rotating 50s linear infinite;
+  -o-animation: rotating 50s linear infinite;
+  animation: rotating 50s linear infinite;
+}
+div.theRadar {
+	width:80vw;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	padding-top:30px;
+	padding-bottom:30px;
 
-
+	canvas {
+		margin-left:auto;
+		margin-right:auto;
+	}
+}
+div.feed {
+	background:$gray-lightest;
+	width:100%;
+	padding:15px;
+}
+div.feedInner {
+	max-width:740px;
+	margin-left:auto;
+	margin-right:auto;
+}
 div.message-container-outer,
 div.preview-container {
 	display:flex;

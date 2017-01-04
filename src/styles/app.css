@@ -12,6 +12,10 @@ body, html {
 	color:$gray-darker;
 	font-weight:300;
 	font-size:14px;
+	background-image: url('../bg.jpg');
+	background-size: cover;
+	padding:0;
+	margin:0;
 }
 
 

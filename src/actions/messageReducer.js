@@ -1,7 +1,8 @@
 import * as MessageActionTypes from './messageActionTypes';
 
 const initialState = {
-	  messages: [{
+	messages: [
+	  {
 	    name: "Angie McAngular",
 	    content: "Hey there, welcome to American Meadows!",
 	    img_src: "http://treehouse-code-samples.s3.amazonaws.com/bootstrap-4/img/angie.png",

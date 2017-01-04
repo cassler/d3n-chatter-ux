@@ -11,6 +11,7 @@ import Message from './Message';
 import Respond from './Respond';
 import MyEditor from './Editor';
 import MediumEditor from './MediumEditor';
+import Radar from './Radar';
 
 class Stream extends Component {
 	
@@ -36,6 +37,7 @@ class Stream extends Component {
 			/>
 		)).slice(currentMessageIndex - 1, currentMessageIndex);	
 
+
 		const messageComponents = messages.map((message, index) => (
 			<Message 
 				name={message.name}
@@ -52,23 +54,27 @@ class Stream extends Component {
 
 		return (
 			<div className="chatterbox">
-
-				<div className="message-container-outer">
-					<h5>Welcome to the show</h5>
-					<MediumEditor />
-					<ReactCSSTransitionGroup
-						transitionName="example"
-						transitionEnterTimeout={500}
-						transitionLeaveTimeout={300}>
-						{ messageComponents }
-					</ReactCSSTransitionGroup>
+				<div className="theRadar" >
+					<Radar r={23} cy={44} cx={82} fill="#C25975" />
 				</div>
+				<div className="feed"><div className="feedInner">
+					<div className="message-container-outer">
+						<h5>Welcome to the show</h5>
+						<MediumEditor />
+						<ReactCSSTransitionGroup
+							transitionName="example"
+							transitionEnterTimeout={500}
+							transitionLeaveTimeout={300}>
+							{ messageComponents }
+						</ReactCSSTransitionGroup>
+					</div>
 
-				
-				<MyEditor className='wysiwyg' />
-				<div className="response-container">
-					{ responseText }
-				</div>
+					
+					<MyEditor className='wysiwyg' />
+					<div className="response-container">
+						{ responseText }
+					</div>
+				</div></div>
 			</div>
 		);
 	}
@@ -77,6 +83,7 @@ class Stream extends Component {
 const mapStateToProps = state => (
 	{
 		messages: state.messages,
+		phones: state.phones,
 		currentMessageIndex: state.currentMessageIndex	
 	}
 );

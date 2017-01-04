@@ -33,7 +33,7 @@ export default class MyEditor extends React.Component {
   }
 
   _onSaveClick() {
-    this.state.publishState = this.state.editorState.getCurrentContent();
+    this.setState.publishState = this.state.editorState.getCurrentContent();
   }
 
   _onPublishClick() {
